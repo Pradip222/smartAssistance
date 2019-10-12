@@ -101,7 +101,7 @@ namespace smartAssistance
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+            /*
             if (button1.Text == "Start")
             {
                // recognitionEngine.RecognizeAsync(RecognizeMode.Multiple);//start
@@ -114,7 +114,9 @@ namespace smartAssistance
                 recognitionEngine.RecognizeAsyncStop();
                 //Close();
                 stop();
-            }
+            }*/
+            audio1 a = new audio1();
+            a.Show();
         }
 
         void _recognizer_RecognizeCompleted(object sender, RecognizeCompletedEventArgs e)

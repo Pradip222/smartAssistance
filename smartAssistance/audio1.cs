@@ -125,9 +125,14 @@ namespace smartAssistance
                 else if (speech == "Open my computer")
                 {
                     jarvis.SpeakAsync("Yes Sir, Opening for you.");
-                    System.Diagnostics.Process.Start(@"C:\Windows\explorer.exe");
+                    System.Diagnostics.Process.Start(@"explorer.exe");
                 }
-                else if (speech == "learn")
+                else if(speech=="exit my computer")
+                {
+                jarvis.SpeakAsync("Yes Sir, Exiting");
+               
+                }
+                /*else if (speech == "learn")
                 {
                     jarvis.SpeakAsync("Yes sir, I am excited to learn new thing. Tell me something.");
                     //SpeechRecognitionEngine _recognizer1 = new SpeechRecognitionEngine();
@@ -138,7 +143,7 @@ namespace smartAssistance
                     //_recognizer1.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(Default_SpeechRecongnized1);
                     //_recognizer1.SpeechDetected += new EventHandler<SpeechDetectedEventArgs>(recognizer_SpeechRecongnized1);
                     //_recognizer1.RecognizeAsync(RecognizeMode.Multiple);
-                }
+                }*/
                 else
                 {
                     jarvis.SpeakAsync("Sorry sir, I can't get you.");
