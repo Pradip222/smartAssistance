@@ -19,6 +19,7 @@ namespace smartAssistance
         SpeechRecognitionEngine startlistening = new SpeechRecognitionEngine();
         Random rnd = new Random();
         int RecTimeout = 0;
+        bool status = true;
         public audio1()
         {
             InitializeComponent();
@@ -62,10 +63,12 @@ namespace smartAssistance
         {
             int ranNum;
             string speech = e.Result.Text;
-            
-            
-            
 
+
+
+
+            if (status)
+            {
                 label1.Text = speech;
                 if (speech == "hello")
                 {
@@ -78,8 +81,8 @@ namespace smartAssistance
                         jarvis.SpeakAsync("Good Afternoon");
                     else
                         jarvis.SpeakAsync("Good Evening");
-                    jarvis.SpeakAsync("I am Jarvis, How may i help you.");
-                    
+                    jarvis.SpeakAsync("I am Alexa, How may i help you.");
+
 
                 }
                 else if (speech == "how are you")
@@ -127,10 +130,12 @@ namespace smartAssistance
                     jarvis.SpeakAsync("Yes Sir, Opening for you.");
                     System.Diagnostics.Process.Start(@"explorer.exe");
                 }
-                else if(speech=="exit my computer")
+                else if (speech == "bye")
                 {
-                jarvis.SpeakAsync("Yes Sir, Exiting");
-               
+                    jarvis.SpeakAsync("Bye Sir, Exiting");
+                    status = false;
+                    this.Hide();
+
                 }
                 /*else if (speech == "learn")
                 {
@@ -149,7 +154,8 @@ namespace smartAssistance
                     jarvis.SpeakAsync("Sorry sir, I can't get you.");
                 }
 
-            
+            }
+
         }
         private void recognizer_SpeechRecongnized(object sender, SpeechDetectedEventArgs e)
         {
