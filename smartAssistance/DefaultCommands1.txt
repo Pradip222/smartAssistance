@@ -1,5 +1,8 @@
 ﻿hello
 how are you
+Show commands
+Stop talking
 what time is it
 play video
 bye
+go to audio

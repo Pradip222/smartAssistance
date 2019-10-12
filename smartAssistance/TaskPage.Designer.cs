@@ -233,12 +233,13 @@
             // video1
             // 
             this.video1.BackColor = System.Drawing.Color.OliveDrab;
-            this.video1.ClientSize = new System.Drawing.Size(1636, 844);
             this.video1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.video1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.video1.Location = new System.Drawing.Point(0, 0);
             this.video1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.video1.Name = "video1";
+            this.video1.Size = new System.Drawing.Size(1636, 844);
+            this.video1.TabIndex = 0;
             this.video1.Visible = false;
             // 
             // TaskPage

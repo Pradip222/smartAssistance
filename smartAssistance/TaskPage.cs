@@ -34,6 +34,7 @@ namespace smartAssistance
 
         private void Button2_Click(object sender, EventArgs e)
         {
+           
             video1.Visible = true;
             video1.BringToFront();
         }

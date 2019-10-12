@@ -109,13 +109,7 @@ namespace smartAssistance
                         jarvis.SpeakAsync("I am Sorry, I will be quit");
                     }
                 }
-                else if (speech == "Stop listening")
-                {
-                    jarvis.SpeakAsync("Yes Sir, If you need me, just ask.");
-                    
-                   
-                    
-                }
+                
                 else if (speech == "Show commands")
                 {
 
@@ -131,10 +125,22 @@ namespace smartAssistance
                     lstCommands.Items.Clear();
                     lstCommands.Visible = false;
                 }
-                else if (speech == "Open my computer")
+                else if (speech == "go to audio")
                 {
-                    jarvis.SpeakAsync("Yes Sir, Opening for you.");
-                    System.Diagnostics.Process.Start(@"explorer.exe");
+                    jarvis.SpeakAsync("Yes Sir");
+                    
+                    Video v = new Video();
+                    v.Hide();
+                    this.Hide();
+                    audio1 ad = new audio1();
+                    ad.ShowDialog();
+                   
+
+
+
+                 
+                    status = false;
+                    this.Hide();
                 }
                 else if (speech == "bye")
                 {

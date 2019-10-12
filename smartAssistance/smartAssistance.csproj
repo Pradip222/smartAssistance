@@ -86,6 +86,12 @@
     <Compile Include="TaskPage.Designer.cs">
       <DependentUpon>TaskPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TempVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TempVideo.Designer.cs">
+      <DependentUpon>TempVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Video.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="video1.designer.cs">
       <DependentUpon>video1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Video2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Video2.designer.cs">
+      <DependentUpon>Video2.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Audio.resx">
       <DependentUpon>Audio.cs</DependentUpon>
@@ -131,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="video1.resx">
       <DependentUpon>video1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Video2.resx">
+      <DependentUpon>Video2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
