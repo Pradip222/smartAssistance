@@ -3,7 +3,7 @@ how are you
 Show commands
 Stop talking
 what time is it
-play video
+search
 bye
 go to audio
 google

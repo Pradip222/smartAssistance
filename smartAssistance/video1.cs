@@ -84,7 +84,7 @@ namespace smartAssistance
                         jarvis.SpeakAsync("Good Afternoon");
                     else
                         jarvis.SpeakAsync("Good Evening");
-                    jarvis.SpeakAsync("I am Alexa, How may i help you.");
+                    jarvis.SpeakAsync("I am Alexa, Welcome to Video Assistance, How may i help you.");
 
 
                 }

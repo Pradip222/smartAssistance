@@ -12,7 +12,7 @@ using System.IO;
 
 namespace smartAssistance
 {
-    public partial class audio1 : Form
+    public partial class google: Form
     {
         SpeechRecognitionEngine _recognizer = new SpeechRecognitionEngine();
         SpeechSynthesizer jarvis = new SpeechSynthesizer();
@@ -21,7 +21,7 @@ namespace smartAssistance
         int RecTimeout = 0;
         bool status = true;
         bool start = true;
-        public audio1()
+        public google()
         {
             InitializeComponent();
         }
@@ -29,12 +29,12 @@ namespace smartAssistance
         private void Form1_Load(object sender, EventArgs e)
         {
             _recognizer.SetInputToDefaultAudioDevice();
-            _recognizer.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands.txt")))));
+            _recognizer.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"google.txt")))));
             _recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(Default_SpeechRecongnized);
             _recognizer.SpeechDetected += new EventHandler<SpeechDetectedEventArgs>(recognizer_SpeechRecongnized);
             _recognizer.RecognizeAsync(RecognizeMode.Multiple);
             startlistening.SetInputToDefaultAudioDevice();
-            startlistening.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands.txt")))));
+            startlistening.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"google.txt")))));
             startlistening.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(startlistening_SpeechReconginzed);
 
         }
@@ -45,8 +45,8 @@ namespace smartAssistance
         private void Default_SpeechRecongnized1(object sender, SpeechRecognizedEventArgs e)
         {
             string speech = e.Result.Text;
-            label1.Text = speech;
-            string[] comm = File.ReadAllLines(@"DefaultCommands.txt");
+           label1.Text = speech;
+            string[] comm = File.ReadAllLines(@"google.txt");
             bool result = false;
             foreach (string c in comm)
             {
@@ -80,11 +80,11 @@ namespace smartAssistance
                     {
                         jarvis.SpeakAsync("Good Morning");
                     }
-                    else if (hour > 12 && hour < 16)
+                    else if (hour >= 12 && hour < 16)
                         jarvis.SpeakAsync("Good Afternoon");
                     else
                         jarvis.SpeakAsync("Good Evening");
-                    jarvis.SpeakAsync("I am Alexa, Welcome to Audio Assistance, How may i help you.");
+                    jarvis.SpeakAsync("I am Alexa, Welcome to Google Assistance, How may i help you.");
 
 
                 }
@@ -109,17 +109,11 @@ namespace smartAssistance
                         jarvis.SpeakAsync("I am Sorry, I will be quit");
                     }
                 }
-                else if (speech == "Stop listening")
-                {
-                    jarvis.SpeakAsync("Yes Sir, If you need me, just ask.");
-                    
-                   
-                    
-                }
+                
                 else if (speech == "Show commands")
                 {
-
-                    string[] commands = File.ReadAllLines(@"DefaultCommands.txt");
+                    
+                    string[] commands = File.ReadAllLines(@"google.txt");
                     lstCommands.Items.Clear();
                     lstCommands.SelectionMode = SelectionMode.None;
                     lstCommands.Visible = true;
@@ -131,10 +125,18 @@ namespace smartAssistance
                     lstCommands.Items.Clear();
                     lstCommands.Visible = false;
                 }
-                else if (speech == "Open my computer")
+                else if (speech == "search")
                 {
-                    jarvis.SpeakAsync("Yes Sir, Opening for you.");
-                    System.Diagnostics.Process.Start(@"explorer.exe");
+                    jarvis.SpeakAsync("Yes Sir");
+
+                    System.Diagnostics.Process.Start(@"https://www.google.com/search?source=hp&ei=h4WhXZrfApq5rQHB-aeYCQ&q=pradip&oq=pradip&gs_l=psy-ab.3..0l6j0i10j0l2j0i10.3557.5127..5409...0.0..0.331.1692.0j1j4j2......0....1..gws-wiz.....0..0i131..10001%3A0%2C154.YIhEa0rCXPE&ved=0ahUKEwjavt_9nZblAhWaXCsKHcH8CZMQ4dUDCAU&uact=5");
+
+
+
+
+
+
+
                 }
                 else if (speech == "bye")
                 {
@@ -143,22 +145,7 @@ namespace smartAssistance
                     this.Hide();
 
                 }
-                else if (speech == "go to assistance")
-                {
-                    jarvis.SpeakAsync("Yes Sir");
-                    google g = new google();
-                    g.ShowDialog();                       
-                    status = false;
-                    this.Hide();
-                }
-                else if (speech == "Play Music")
-                {
-                    jarvis.SpeakAsync("Sure Sir!");
-                    System.Diagnostics.Process.Start(@"C:\Program Files\VideoLAN\VLC\a.mp3");
-                
-                    
-
-                }
+               
                 /*else if (speech == "learn")
                 {
                     jarvis.SpeakAsync("Yes sir, I am excited to learn new thing. Tell me something.");
