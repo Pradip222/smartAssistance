@@ -43,8 +43,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.video1 = new smartAssistance.Video();
             this.audio1 = new smartAssistance.Audio();
+            this.video1 = new smartAssistance.Video();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -212,24 +212,12 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.video1);
             this.panel4.Controls.Add(this.audio1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(264, 120);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1656, 893);
             this.panel4.TabIndex = 3;
-            // 
-            // video1
-            // 
-            this.video1.BackColor = System.Drawing.Color.OliveDrab;
-            this.video1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.video1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.video1.Location = new System.Drawing.Point(0, 0);
-            this.video1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.video1.Name = "video1";
-            this.video1.Size = new System.Drawing.Size(1654, 891);
-            this.video1.TabIndex = 1;
             // 
             // audio1
             // 
@@ -241,6 +229,17 @@
             this.audio1.Name = "audio1";
             this.audio1.Size = new System.Drawing.Size(1654, 891);
             this.audio1.TabIndex = 0;
+            // 
+            // video1
+            // 
+            this.video1.BackColor = System.Drawing.Color.OliveDrab;
+            this.video1.ClientSize = new System.Drawing.Size(1636, 844);
+            this.video1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.video1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.video1.Location = new System.Drawing.Point(0, 0);
+            this.video1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.video1.Name = "video1";
+            this.video1.Visible = false;
             // 
             // TaskPage
             // 

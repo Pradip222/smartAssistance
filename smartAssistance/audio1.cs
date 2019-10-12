@@ -197,5 +197,10 @@ namespace smartAssistance
                 _recognizer.RecognizeAsync(RecognizeMode.Multiple);
             }
         }
+
+        private void LstCommands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

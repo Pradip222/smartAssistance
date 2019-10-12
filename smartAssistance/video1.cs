@@ -12,7 +12,7 @@ using System.IO;
 
 namespace smartAssistance
 {
-    public partial class Video : Form
+    public partial class video1 : Form
     {
         SpeechRecognitionEngine _recognizer = new SpeechRecognitionEngine();
         SpeechSynthesizer jarvis = new SpeechSynthesizer();
@@ -21,7 +21,7 @@ namespace smartAssistance
         int RecTimeout = 0;
         bool status = true;
         bool start = true;
-        public Video()
+        public video1()
         {
             InitializeComponent();
         }
@@ -29,12 +29,12 @@ namespace smartAssistance
         private void Form1_Load(object sender, EventArgs e)
         {
             _recognizer.SetInputToDefaultAudioDevice();
-            _recognizer.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands.txt")))));
+            _recognizer.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands1.txt")))));
             _recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(Default_SpeechRecongnized);
             _recognizer.SpeechDetected += new EventHandler<SpeechDetectedEventArgs>(recognizer_SpeechRecongnized);
             _recognizer.RecognizeAsync(RecognizeMode.Multiple);
             startlistening.SetInputToDefaultAudioDevice();
-            startlistening.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands.txt")))));
+            startlistening.LoadGrammarAsync(new Grammar(new GrammarBuilder(new Choices(File.ReadAllLines(@"DefaultCommands1.txt")))));
             startlistening.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(startlistening_SpeechReconginzed);
 
         }
@@ -45,7 +45,7 @@ namespace smartAssistance
         private void Default_SpeechRecongnized1(object sender, SpeechRecognizedEventArgs e)
         {
             string speech = e.Result.Text;
-            label1.Text = speech;
+           label1.Text = speech;
             string[] comm = File.ReadAllLines(@"DefaultCommands1.txt");
             bool result = false;
             foreach (string c in comm)
@@ -65,14 +65,14 @@ namespace smartAssistance
             int ranNum;
             string speech = e.Result.Text;
 
-
+            
             if (!start)
                 _recognizer.RecognizeAsync(RecognizeMode.Multiple);
 
             if (status)
             {
                 label1.Text = speech;
-
+                
                 if (speech == "hello")
                 {
                     int hour = DateTime.Now.Hour;
@@ -88,20 +88,67 @@ namespace smartAssistance
 
 
                 }
-               
+                else if (speech == "how are you")
+                {
+                    jarvis.SpeakAsync("I am good, Hoping that you are also good.");
+                }
                 else if (speech == "what time is it")
                 {
                     string cur = DateTime.Now.ToShortTimeString();
                     jarvis.SpeakAsync("Current Time is " + cur);
                 }
-               
-                
+                else if (speech == "Stop talking")
+                {
+                    jarvis.SpeakAsyncCancelAll();
+                    jarvis.SpeakAsync("Yes Sir, I am here");
+                    ranNum = rnd.Next(1);
+                    if (ranNum == 1)
+                        jarvis.SpeakAsync("Yes Sir, I am here");
+                    else if (ranNum == 2)
+                    {
+                        jarvis.SpeakAsync("I am Sorry, I will be quit");
+                    }
+                }
+                else if (speech == "Stop listening")
+                {
+                    jarvis.SpeakAsync("Yes Sir, If you need me, just ask.");
+                    
+                   
+                    
+                }
+                else if (speech == "Show commands")
+                {
+
+                    string[] commands = File.ReadAllLines(@"DefaultCommands1.txt");
+                    lstCommands.Items.Clear();
+                    lstCommands.SelectionMode = SelectionMode.None;
+                    lstCommands.Visible = true;
+                    foreach (string command in commands)
+                        lstCommands.Items.Add(command);
+                }
+                else if (speech == "Hide commands")
+                {
+                    lstCommands.Items.Clear();
+                    lstCommands.Visible = false;
+                }
+                else if (speech == "Open my computer")
+                {
+                    jarvis.SpeakAsync("Yes Sir, Opening for you.");
+                    System.Diagnostics.Process.Start(@"explorer.exe");
+                }
+                else if (speech == "bye")
+                {
+                    jarvis.SpeakAsync("Bye Sir, Exiting");
+                    status = false;
+                    this.Hide();
+
+                }
                 else if (speech == "play video")
                 {
                     jarvis.SpeakAsync("Sure Sir!");
-                    System.Diagnostics.Process.Start(@"G:\\Gate\NPTEL\AIKRR\week 7\1.mp4");
-
-
+                    System.Diagnostics.Process.Start(@"G:\Gate\NPTEL\AIKRR\week 7\1.mp4");
+                
+                    
 
                 }
                 /*else if (speech == "learn")
@@ -140,21 +187,18 @@ namespace smartAssistance
 
         private void TmrSpeaking_Tick(object sender, EventArgs e)
         {
-
+            if (RecTimeout == 10)
+            {
+                _recognizer.RecognizeAsyncCancel();
+            }
+            else if (RecTimeout == 11)
+            {
+                TmrSpeaking.Stop();
+                _recognizer.RecognizeAsync(RecognizeMode.Multiple);
+            }
         }
 
         private void LstCommands_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            video1 v = new video1();
-            v.Show();
-        }
-
-        private void Video_Load(object sender, EventArgs e)
         {
 
         }

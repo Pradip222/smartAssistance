@@ -1,6 +1,6 @@
 ﻿namespace smartAssistance
 {
-    partial class audio1
+    partial class video1
     {
         /// <summary>
         /// Required designer variable.
