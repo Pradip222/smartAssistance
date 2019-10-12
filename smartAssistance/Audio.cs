@@ -31,13 +31,7 @@ namespace smartAssistance
 
             recognitionEngine.SpeechRecognized += (s, args) =>
             {
-                SpeechSynthesizer speaker = new SpeechSynthesizer();
-                speaker.Speak(args.Result.Text);
-                label2.Text = args.Result.Text;
-                if (label2.Text.Equals("start"))
-                {
-                    speaker.Speak("hii pradip , How may i help you");
-                }
+                
                /* foreach (RecognizedWordUnit word in args.Result.Words)
                 {
                     label2.Text = "";
@@ -133,6 +127,11 @@ namespace smartAssistance
         }
 
         private void Lbinstruction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Audio_Load(object sender, EventArgs e)
         {
 
         }

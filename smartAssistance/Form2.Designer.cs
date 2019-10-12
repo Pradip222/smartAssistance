@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbnewuser = new System.Windows.Forms.Label();
             this.lbfirstn = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.txtemailid = new System.Windows.Forms.TextBox();
             this.txtMob = new System.Windows.Forms.TextBox();
             this.butsubmit = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1664, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::smartAssistance.Properties.Resources.back;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(55, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // label1
             // 
@@ -174,7 +187,7 @@
             this.txtFname.Location = new System.Drawing.Point(450, 169);
             this.txtFname.Multiline = true;
             this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(238, 39);
+            this.txtFname.Size = new System.Drawing.Size(238, 46);
             this.txtFname.TabIndex = 9;
             this.txtFname.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -184,7 +197,7 @@
             this.txtMname.Location = new System.Drawing.Point(450, 244);
             this.txtMname.Multiline = true;
             this.txtMname.Name = "txtMname";
-            this.txtMname.Size = new System.Drawing.Size(238, 40);
+            this.txtMname.Size = new System.Drawing.Size(238, 46);
             this.txtMname.TabIndex = 10;
             // 
             // txtLname
@@ -193,7 +206,7 @@
             this.txtLname.Location = new System.Drawing.Point(450, 312);
             this.txtLname.Multiline = true;
             this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(238, 41);
+            this.txtLname.Size = new System.Drawing.Size(238, 46);
             this.txtLname.TabIndex = 11;
             // 
             // txtDate
@@ -226,7 +239,7 @@
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(272, 40);
+            this.txtPassword.Size = new System.Drawing.Size(272, 38);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -236,7 +249,7 @@
             this.txtemailid.Location = new System.Drawing.Point(983, 311);
             this.txtemailid.Multiline = true;
             this.txtemailid.Name = "txtemailid";
-            this.txtemailid.Size = new System.Drawing.Size(272, 42);
+            this.txtemailid.Size = new System.Drawing.Size(272, 38);
             this.txtemailid.TabIndex = 15;
             this.txtemailid.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             this.txtemailid.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5_Validating);
@@ -264,19 +277,6 @@
             this.butsubmit.Click += new System.EventHandler(this.butsubmit_Click);
             this.butsubmit.MouseEnter += new System.EventHandler(this.Butsubmit_MouseEnter);
             this.butsubmit.MouseLeave += new System.EventHandler(this.Butsubmit_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::smartAssistance.Properties.Resources.back;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // Form2
             // 

@@ -47,7 +47,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(729, 401);
+            this.button1.Location = new System.Drawing.Point(730, 401);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 89);
             this.button1.TabIndex = 2;
@@ -88,6 +88,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Audio";
             this.Size = new System.Drawing.Size(1656, 918);
+            this.Load += new System.EventHandler(this.Audio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

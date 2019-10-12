@@ -1,0 +1,10 @@
+﻿hello
+how are you
+what time is it
+Wake up
+Stop talking
+Stop listening
+Show commands
+Hide commands
+learn
+Open my computer

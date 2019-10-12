@@ -54,6 +54,12 @@
     <Compile Include="Audio.Designer.cs">
       <DependentUpon>Audio.cs</DependentUpon>
     </Compile>
+    <Compile Include="audio1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="audio1.Designer.cs">
+      <DependentUpon>audio1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </Compile>
     <EmbeddedResource Include="Audio.resx">
       <DependentUpon>Audio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="audio1.resx">
+      <DependentUpon>audio1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -120,6 +129,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DefaultCommands - Copy.txt" />
+    <Content Include="DefaultCommands.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,7 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(677, 388);
+            this.label2.Location = new System.Drawing.Point(677, 390);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(220, 43);
             this.label2.TabIndex = 1;
@@ -82,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(677, 461);
+            this.label3.Location = new System.Drawing.Point(677, 460);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 43);
             this.label3.TabIndex = 2;

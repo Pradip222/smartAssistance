@@ -16,7 +16,7 @@ namespace smartAssistance
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TaskPage());
+            Application.Run(new audio1());
         }
     }
 }
