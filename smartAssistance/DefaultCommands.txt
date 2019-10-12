@@ -9,3 +9,4 @@ Hide commands
 learn
 Open my computer
 bye
+Play Music

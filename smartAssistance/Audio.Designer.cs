@@ -47,7 +47,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(730, 401);
+            this.button1.Location = new System.Drawing.Point(628, 279);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(199, 89);
             this.button1.TabIndex = 2;
@@ -58,7 +58,7 @@
             // lbinstruction
             // 
             this.lbinstruction.Font = new System.Drawing.Font("Trebuchet MS", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbinstruction.Location = new System.Drawing.Point(0, 511);
+            this.lbinstruction.Location = new System.Drawing.Point(-104, 382);
             this.lbinstruction.Name = "lbinstruction";
             this.lbinstruction.Size = new System.Drawing.Size(1656, 67);
             this.lbinstruction.TabIndex = 3;

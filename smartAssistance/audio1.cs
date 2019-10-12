@@ -20,6 +20,7 @@ namespace smartAssistance
         Random rnd = new Random();
         int RecTimeout = 0;
         bool status = true;
+        bool start = true;
         public audio1()
         {
             InitializeComponent();
@@ -64,12 +65,14 @@ namespace smartAssistance
             int ranNum;
             string speech = e.Result.Text;
 
-
-
+            
+            if (!start)
+                _recognizer.RecognizeAsync(RecognizeMode.Multiple);
 
             if (status)
             {
                 label1.Text = speech;
+                
                 if (speech == "hello")
                 {
                     int hour = DateTime.Now.Hour;
@@ -87,7 +90,7 @@ namespace smartAssistance
                 }
                 else if (speech == "how are you")
                 {
-                    jarvis.SpeakAsync("I am good, How are you?");
+                    jarvis.SpeakAsync("I am good, Hoping that you are also good.");
                 }
                 else if (speech == "what time is it")
                 {
@@ -109,6 +112,9 @@ namespace smartAssistance
                 else if (speech == "Stop listening")
                 {
                     jarvis.SpeakAsync("Yes Sir, If you need me, just ask.");
+                    
+                   
+                    
                 }
                 else if (speech == "Show commands")
                 {
@@ -135,6 +141,14 @@ namespace smartAssistance
                     jarvis.SpeakAsync("Bye Sir, Exiting");
                     status = false;
                     this.Hide();
+
+                }
+                else if (speech == "Play Music")
+                {
+                    jarvis.SpeakAsync("Sure Sir!");
+                    System.Diagnostics.Process.Start(@"C:\Program Files\VideoLAN\VLC\a.mp3");
+                
+                    
 
                 }
                 /*else if (speech == "learn")
